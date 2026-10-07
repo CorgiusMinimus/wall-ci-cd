@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedline | Log in</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script src="/js/auth.js" defer></script>
+  </head>
+  <body class="auth-body">
+    <main class="auth-shell">
+      <section class="auth-card" aria-labelledby="page-title">
+        <div class="status-strip">
+          <span>SYS://AUTH.RAIL</span>
+          <span class="status-online"><span></span>GATEWAY ONLINE</span>
+        </div>
+
+        <header class="auth-header">
+          <div class="brand-row">
+            <h1 id="page-title">Feedline</h1>
+            <span>PORT_443</span>
+          </div>
+          <p>A utility-first network for long-form discourse.</p>
+        </header>
+
+        <div class="auth-tabs" role="tablist" aria-label="Authentication mode">
+          <button class="auth-tab active" id="tab-login" type="button" role="tab" aria-selected="true">Log in</button>
+          <button class="auth-tab" id="tab-register" type="button" role="tab" aria-selected="false">Register</button>
+        </div>
+
+        <div class="alert hidden" id="auth-alert" role="alert">
+          <strong>AUTHENTICATION NOTICE</strong>
+          <span id="auth-alert-message"></span>
+        </div>
+
+        <form class="auth-form" id="auth-form">
+          <div class="form-field register-only hidden">
+            <label for="display-name">Display Name</label>
+            <input id="display-name" name="displayName" type="text" placeholder="e.g. Alex Morgan" autocomplete="name" maxlength="100" />
+          </div>
+
+          <div class="form-field register-only hidden">
+            <label for="username">Username</label>
+            <input id="username" name="username" type="text" placeholder="e.g. alexm" autocomplete="username" minlength="3" maxlength="50" pattern="[A-Za-z0-9_]+" />
+          </div>
+
+          <div class="form-field" id="identifier-field">
+            <label for="identifier" id="identifier-label">Username or Email</label>
+            <input id="identifier" name="identifier" type="text" autocomplete="username" maxlength="255" />
+          </div>
+
+          <div class="form-field register-only hidden">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="alex@example.com" autocomplete="email" maxlength="255" />
+          </div>
+
+          <div class="form-field">
+            <div class="password-label-row">
+              <label for="password">Password</label>
+              <button class="text-button" id="toggle-password" type="button">Show</button>
+            </div>
+            <input id="password" name="password" type="password" autocomplete="current-password" minlength="8" maxlength="128" />
+          </div>
+
+          <button class="primary-button" id="submit-button" type="submit">Log in</button>
+        </form>
+
+        <aside class="notice-card">
+          <strong>Protocol Notice</strong>
+          <p>You must be logged in to view posts, create updates, or comment.</p>
+        </aside>
+
+        <footer class="auth-footer">
+          <span>Feedline Node 1.0.4</span>
+          <span>READ-ONLY GUEST MODE BLOCKED</span>
+        </footer>
+      </section>
+    </main>
+  </body>
+</html>

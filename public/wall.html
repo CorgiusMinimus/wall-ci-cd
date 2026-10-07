@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedline | Wall</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script src="/js/wall.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <a class="logo" href="/wall.html">Feedline</a>
+        <span class="topbar-subtitle">Barebones Text Discourse</span>
+      </div>
+      <button class="secondary-button" id="logout-button" type="button">Log out</button>
+    </header>
+
+    <main class="feed-shell">
+      <section class="composer-card" aria-labelledby="composer-title">
+        <div class="user-row">
+          <div class="avatar" id="current-user-avatar">--</div>
+          <div>
+            <h1 id="composer-title">Post to Feedline</h1>
+            <p><span id="current-user-name">Loading...</span> <span id="current-user-username"></span></p>
+          </div>
+        </div>
+
+        <form id="post-form" class="post-form">
+          <label class="sr-only" for="post-body">Post body</label>
+          <textarea id="post-body" name="body" rows="3" maxlength="2000" placeholder="What's on your mind?" required></textarea>
+          <div class="composer-actions">
+            <span class="helper-text">Plain text only • 2,000 character limit</span>
+            <button class="primary-button" id="post-submit" type="submit">Post</button>
+          </div>
+        </form>
+
+        <div class="alert hidden" id="post-alert" role="alert">
+          <strong>POST ERROR</strong>
+          <span id="post-alert-message"></span>
+        </div>
+      </section>
+
+      <section class="feed-section" aria-labelledby="feed-title">
+        <div class="feed-heading">
+          <h2 id="feed-title">Recent posts</h2>
+          <button class="text-button" id="refresh-button" type="button">Refresh</button>
+        </div>
+
+        <div class="feed-state" id="feed-state">Loading posts...</div>
+        <div class="post-list" id="post-list"></div>
+      </section>
+    </main>
+  </body>
+</html>
