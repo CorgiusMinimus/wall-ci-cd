@@ -1,4 +1,4 @@
-const { requireAuth } = require('../middleware/auth');
+const { requireAuth } = require('../../middleware/auth');
 
 function createResponse() {
   const res = {

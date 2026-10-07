@@ -3,7 +3,7 @@ const {
   mapComment,
   postFromRequest,
   commentFromRequest,
-} = require('../routes/post-helpers');
+} = require('../../routes/post-helpers');
 
 describe('post route helpers', () => {
   test('mapPost maps database row fields to the public post shape', () => {

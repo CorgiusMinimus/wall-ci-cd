@@ -28,7 +28,7 @@ jest.mock('bcrypt', () => ({
   compare: jest.fn(async (password, hash) => hash === `hashed:${password}`),
 }));
 
-jest.mock('../db/connection', () => ({
+jest.mock('../../db/connection', () => ({
   execute: mockExecute,
   query: jest.fn(async () => [[]]),
 }));

@@ -4,7 +4,7 @@ const {
   normalizeEmail,
   isValidEmail,
   isValidUsername,
-} = require('../routes/auth-helpers');
+} = require('../../routes/auth-helpers');
 
 describe('auth helpers', () => {
   describe('safeUser', () => {

@@ -8,7 +8,7 @@ jest.mock('bcrypt', () => ({
   compare: jest.fn(async (password, hash) => hash === `hashed:${password}`),
 }));
 
-jest.mock('../db/connection', () => ({
+jest.mock('../../db/connection', () => ({
   execute: jest.fn(async (sql, params) => {
     if (sql.includes('SELECT id FROM users WHERE username = ? OR email = ? LIMIT 1')) {
       const [username, email] = params;

@@ -1,4 +1,4 @@
-const { commentUpdateFromRequest } = require('../routes/comment-helpers');
+const { commentUpdateFromRequest } = require('../../routes/comment-helpers');
 
 describe('comment route helpers', () => {
   test('commentUpdateFromRequest builds an updated comment response from the current session user', () => {
