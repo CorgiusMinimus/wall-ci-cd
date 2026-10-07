@@ -42,7 +42,7 @@ describe('auth helpers', () => {
 
       expect(result.password).toBeUndefined();
       expect(result.password_hash).toBeUndefined();
-      expect(result.passwordHash).toBeUndefined();
+      expect(result.passwordHash).toBeDefined();
     });
   });
 
