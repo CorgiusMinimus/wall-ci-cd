@@ -2,7 +2,7 @@ const mockExecute = jest.fn(async () => {
   throw new Error('Protected route reached the database without authentication.');
 });
 
-jest.mock('../db/connection', () => ({
+jest.mock('../../db/connection', () => ({
   execute: mockExecute,
   query: jest.fn(async () => [[]]),
 }));
